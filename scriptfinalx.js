@@ -377,7 +377,7 @@ function showSuccessModal() {
     successModal.classList.add('active');
 
     // Set message directly (No typewriter)
-    successMessage.textContent = "Yes! I knew you loved me, মৌনতা! 💖";
+    successMessage.textContent = "আমি জানতাম অহিনেই ক্লিক করবে! 💖";
 
     initSlideshow();
 }
