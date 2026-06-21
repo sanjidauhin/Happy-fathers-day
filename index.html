@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Father's Day 💕</title>
+    <meta name="description" content="A special question for Mownota">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Poppins:wght@300;400;600;700&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <!-- Entrance Screen -->
+    <div id="entranceScreen" class="entrance-screen">
+        <div class="entrance-content">
+            <h1 class="entrance-title">Hiii, আব্বু!</h1>
+            <p class="entrance-text">Happy Father's Day!</p>
+            <button id="enterBtn" class="btn btn-yes" style="font-size: 1.5rem; padding: 1rem 3rem;">Yes! 💖</button>
+        </div>
+    </div>
+
+    <!-- Loading Screen -->
+    <div id="loadingScreen" class="loading-screen hidden">
+        <div class="loading-content">
+            <div class="heart-loader">
+                <span class="heart">❤️</span>
+            </div>
+            <h2 class="loading-text"> বাবা দিবসের শুভেচ্ছা! </h2>
+        </div>
+    </div>
+
+    <!-- Background Particles -->
+    <div id="particles"></div>
+
+    <!-- Cursor Trail -->
+    <canvas id="cursorCanvas"></canvas>
+
+    <!-- Music Control -->
+    <button id="musicToggle" class="music-toggle" title="Toggle Music">
+        <span class="music-icon">🔊</span>
+    </button>
+    <!-- Music Tracks -->
+    <audio id="mainMusic" loop>
+        <source src="Murtaza_Qizilbash___Hum___Official_Audio(128k).mp3" type="audio/mpeg">
+    </audio>
+    <audio id="musicFinale" loop>
+        <source src="Ehsaas__Acoustic__-_Faheem_Abdullah,_UNPLG_d_@faheemabdullahworld(48k).mp3" type="audio/mpeg">
+    </audio>
+
+    <!-- Main Content -->
+    <main class="container">
+        <div class="card" id="questionCard">
+            <h1 class="title">আব্বু তুমি আনিকাকে বেশি ভালোবাসো নাকি আমাকে?</h1>
+            <p class="subtitle">💝</p>
+
+            <div class="attempt-counter" id="attemptCounter">
+                <span id="attemptText"></span>
+            </div>
+
+            <div class="button-container" id="buttonContainer">
+                <button class="btn btn-yes" id="yesBtn"> অহিনকে! 💕</button>
+                <button class="btn btn-no" id="noBtn"> আনিকাকে! 😢</button>
+            </div>
+        </div>
+    </main>
+
+    <!-- Success Modal -->
+    <div id="successModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 class="typing-text" id="successMessage"></h2>
+            </div>
+
+            <!-- Photo Slideshow -->
+            <div class="slideshow-container" id="slideshowContainer">
+                <div class="slideshow">
+                    <div class="slide active">
+                        <img src="IMG-20240405-WA0007.jpg" alt="Our precious moment">
+                        <p class="slide-caption"> পিতা দিবসের শুভেচ্ছা! </p>
+                    </div>
+                    <div class="slide">
+                        <img src="IMG20240907155348.jpg" alt="Happy together">
+                        <p class="slide-caption"> বিরিয়ানি কিনে আইনো! </p>
+                    </div>
+                    <div class="slide">
+                        <img src="IMG20260124150818.jpg" alt="Forever together">
+                        <p class="slide-caption"> সাথে ফ্রাইড রাইস চিকেন </p>
+                    </div>
+                </div>
+                <div class="slide-dots" id="slideDots"></div>
+            </div>
+
+            <!-- Love Letter -->
+            <div class="love-letter">
+                <h3> আব্বু! 💌</h3>
+                <p class="letter-content">
+
+                    বটগাছের ছায়ার মতো
+                    তুমি আছো নীরবে পাশে,
+                    ঝড় এলে ঢাল হয়ে দাঁড়াও,
+                    হাসি রাখো মুখের ভাষে।
+                    
+                    নিজের স্বপ্ন লুকিয়ে রেখে
+                    গড়ো আমার স্বপ্নঘর,
+                    ক্লান্ত চোখে ঘুম না এলেও
+                    বল— “ভয় নেই, আমি আছি পর।”
+                    <br><br>
+                    রোদে পুড়ে, বৃষ্টিতে ভিজে
+                    যে মানুষটা থাকে অটল,
+                    তার ভালোবাসা নদীর মতো
+                    গভীর, শান্ত, অবিচল।
+                    <br><br>
+                    মায়ের স্নেহ যেমন কোমল,
+                    বাবার ভালোবাসা ঢাল,
+                    কথায় কম, কাজে বেশি—
+                    তাতেই মেলে জীবনের তাল।
+                    <br><br>
+                    আজকের দিনে বলি বাবা,
+                    তুমি আমার সাহস-আলো,
+                    তোমার হাতের আশীর্বাদে
+                    জীবন হোক সুন্দর ভালো।
+                    <br><br>
+                    শুভ পিতা দিবস, বাবা—
+                    তুমি আমার প্রথম নায়ক,
+                    তোমার মতো ভালো মানুষ
+                    হতে চাই প্রতিদিন একটু একটু।
+
+                    <strong>Happy Father's Day!</strong>
+                </p>
+            </div>
+
+
+
+            <!-- Close button removed as requested -->
+        </div>
+    </div>
+
+    <!-- External Libraries -->
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+    <script src="scriptfinalx.js"></script>
+</body>
+
+
+</html>
